@@ -22,4 +22,4 @@ The simulation varies the bid-ask spread, volatility, number of "trade steps" th
 ## Results
 
 ### Bid-Spread Vs. Profitability
-! [Spread Profitability Graph](Plots/market_maker_profit_vs_spread_cubic_fit.png)
+![Spread Profitability Graph](Plots/market_maker_profit_vs_spread_cubic_fit.png)`
