@@ -23,3 +23,22 @@ The simulation varies the bid-ask spread, volatility, number of "trade steps" th
 
 ### Bid-Spread Vs. Profitability
 ![Spread Profitability Graph](Plots/market_maker_profit_vs_spread_cubic_fit.png)`
+By setting all other variables constant, I was able to clearly see how the bid-ask spread affects profitability as it increases.
+
+What I expected to find:
+- Very low spreads would lead to low profitability as well, mostly due to how having such small margins fails to amke up for the risk of constant price fluctuations in the market.
+- Even though each experiment contains seemingly random price changes at each step, the sheer amount of trials would allow the average profitability to show a clear pattern as spread increases.
+
+What surprised me:
+- While the low spread values unsurprisingly returned low profitability, once the spread got too wide, it began to turn away enough customers to bring down profitabilty, despite high margins.
+- The cubic fit makes this model more complicated than "profitability goes up and then it goes down" which may go along with the low loss rate of higher spreads,
+
+Seeing the strength of this relationship made me wonder how it would change given higher levels of volatility in the market.
+![Spread Profitability Graph Vol = .8](Plots/marker_maker_profit_vs_spread_high_vol.png)
+Not only did increase volatility from .2 to .8 not only spread out the points, but also shifted the max spread to the right. This makes sense, as higher volatility in the market means you need higher margins to "blanket" you from too many losses.
+
+This did prompt me to instead look at the relationship between increased volatility and its effect on the optimal spread for maximum average profit. What I found out was it was a mostly linear relationship, but as it approaches a spread of around 2.5, the graph levels out. It seems like this is the point where any higher of a spread means little to no customers are actually buying anything.
+![Optimal Spread for Given Volatility](Plot/Optimal_Spread_vs_Volatility.png)
+So even though the relationship is close to linear, a cubic graph actually represents it better, and is what I used to approximate it. Now that I have this relationship, I was able to create a function that, given any volatility, can return the optimal spread.
+
+Next I am going to see if I can see how the percentage of informed traders can affect the loss rate of the simulation.
