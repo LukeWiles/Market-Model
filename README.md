@@ -44,3 +44,6 @@ This did prompt me to instead look at the relationship between increased volatil
 So even though the relationship is close to linear, a cubic graph actually represents it better, and is what I used to approximate it. Now that I have this relationship, I was able to create a function that, given any volatility, can return the optimal spread.
 
 Next I am going to see if I can see how the percentage of informed traders can affect the loss rate of the simulation.
+
+### Informed Percentage vs. Loss Rate
+![Loss Rate for Given Informed Percentage](Plots/loss_rate_vs_information_trade.png)
